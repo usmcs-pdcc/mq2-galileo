@@ -1,0 +1,13 @@
+{
+  "name": "mq2-galileo",
+  "description": "A simple MQ-2 gas sensor with Intel Galileo.",
+  "version": "0.0.1",
+  "main": "main.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+      "express": "*",
+      "socket.io": "*"
+  }
+}
