@@ -5,19 +5,10 @@ var app = express();
 var http = require('http').Server(app);
 var socket = require('socket.io')(http);
 
-// serves html page
-function handler(req, res) {
-    fs.readFile(__dirname + '/index.html',
-    function(err, data) {
-        if(err) {
-            res.writeHead(500);
-            res.end(data);
-        }
-        
-        res.writeHead(200);
-        res.end(data);
-    });
-}
+// serves static file
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
+});
 
 http.listen(55555, function() {
     console.log("mq2-galileo is listening at *:55555");
